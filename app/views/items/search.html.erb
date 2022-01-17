@@ -8,6 +8,11 @@
       <br>
       <%= f.text_field :name_cont, placeholder: '商品名' %>
     </div>
+    <div class="search-field">
+      <%= f.label :name, '商品名(複数のキーワードから検索)' %>
+      <br>
+      <%= f.text_field :name, placeholder: '商品名' %>
+    </div>
     <div class='search-field'>
       <%= f.label :user_nickname_cont, '出品者名' %>
       <br>
@@ -19,7 +24,7 @@
       <%= f.collection_select(:category_id_eq, Category.all, :id, :name, {include_blank: "---"}) %>
     </div>
      <div class="search-field">
-      <%= f.label :category_id_in, 'カテゴリ' %>
+      <%= f.label :category_id_in, 'カテゴリ(複数のカテゴリーから検索' %>
       <br>
       <%= f.collection_check_boxes(:category_id_in, Category.all, :id, :name, {include_blank: "---"}) %>
     </div>
